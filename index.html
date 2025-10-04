@@ -222,27 +222,37 @@
             <li>• Tiered licensing for B2G & B2B</li>
           </ul>
         </div>
-        <form action="https://formspree.io/f/your-form-id" method="POST" class="bg-white p-6 rounded-2xl shadow-soft">
+        <form id="pilot-form" action="https://formspree.io/f/mqaylkrp" method="POST" accept-charset="UTF-8" class="bg-white p-6 rounded-2xl shadow-soft">
+          <!-- Honeypot (spam protection) -->
+          <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+          <!-- Helpful metadata -->
+          <input type="hidden" name="_subject" value="HULME — Pilot Request" />
+          <input type="hidden" name="source" value="hulme-ai.github.io" />
+
           <div class="grid sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-sm font-medium text-slate-700">Name</label>
-              <input required name="name" type="text" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-hulmeGreen focus:border-hulmeGreen" />
+              <input required name="name" type="text" autocomplete="name" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-hulmeGreen focus:border-hulmeGreen" />
             </div>
             <div>
               <label class="block text-sm font-medium text-slate-700">Email</label>
-              <input required name="email" type="email" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-hulmeGreen focus:border-hulmeGreen" />
+              <input required name="email" type="email" autocomplete="email" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-hulmeGreen focus:border-hulmeGreen" />
             </div>
           </div>
           <div class="mt-4">
             <label class="block text-sm font-medium text-slate-700">Organization</label>
-            <input name="org" type="text" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-hulmeGreen focus:border-hulmeGreen" />
+            <input name="org" type="text" autocomplete="organization" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-hulmeGreen focus:border-hulmeGreen" />
           </div>
           <div class="mt-4">
             <label class="block text-sm font-medium text-slate-700">How can we help?</label>
-            <textarea name="message" rows="4" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-hulmeGreen focus:border-hulmeGreen" placeholder="Pilot interest, community size, timelines..."></textarea>
+            <textarea name="message" rows="4" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-hulmeGreen focus:border-hulmeGreen" placeholder="Pilot interest, community size, timelines..." required></textarea>
           </div>
+
           <button type="submit" class="mt-6 w-full py-3 rounded-xl bg-hulmeGreen text-white font-semibold shadow-soft hover:brightness-105">Request a pilot</button>
           <p class="mt-2 text-xs text-slate-500">By submitting, you agree we may contact you about HULME. We won’t share your information.</p>
+
+          <!-- Status messages -->
+          <div id="form-status" class="mt-4 hidden p-3 rounded-lg text-sm"></div>
         </form>
       </div>
     </div>
@@ -254,6 +264,42 @@
       <div class="text-sm text-slate-600">Built offline‑first • Privacy‑preserving • Community‑driven</div>
     </div>
   </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    // Async submit to Formspree so we can show a success message without leaving the page
+    const form = document.getElementById('pilot-form');
+    const statusBox = document.getElementById('form-status');
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusBox.className = 'mt-4 p-3 rounded-lg text-sm bg-white/50 text-slate-700';
+      statusBox.textContent = 'Sending…';
+      statusBox.classList.remove('hidden');
+
+      try {
+        const data = new FormData(form);
+        const res = await fetch(form.action, {
+          method: form.method,
+          headers: { 'Accept': 'application/json' },
+          body: data
+        });
+        if (res.ok) {
+          form.reset();
+          statusBox.className = 'mt-4 p-3 rounded-lg text-sm bg-green-50 text-green-800 ring-1 ring-green-200';
+          statusBox.textContent = 'Thanks! We\'ll be in touch within 1–2 business days.';
+        } else {
+          statusBox.className = 'mt-4 p-3 rounded-lg text-sm bg-amber-50 text-amber-800 ring-1 ring-amber-200';
+          statusBox.textContent = 'Hmm, something went wrong. Please try again or email hello@hulme.health.';
+        }
+      } catch (err) {
+        statusBox.className = 'mt-4 p-3 rounded-lg text-sm bg-rose-50 text-rose-800 ring-1 ring-rose-200';
+        statusBox.textContent = 'Network error. Please check your connection and try again.';
+      }
+    });
+  </script>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
