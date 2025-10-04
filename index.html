@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HULME — AI-Empowered Community Health Guides</title>
-  <meta name="description" content="HULME puts safe, intelligent triage support into the hands of certified community health guides — offline-first, privacy-preserving, and MHRA-compliant." />
-  <meta property="og:title" content="HULME — AI-Empowered Community Health Guides" />
-  <meta property="og:description" content="Frontline triage to bridge the care gap. Offline-first. Federated learning. Population health early warning." />
+  <title>HULME — AI‑Empowered Community Health Guides</title>
+  <meta name="description" content="HULME puts safe, intelligent triage support into the hands of certified community health guides — offline‑first, privacy‑preserving, and MHRA‑compliant." />
+  <meta property="og:title" content="HULME — AI‑Empowered Community Health Guides" />
+  <meta property="og:description" content="Frontline triage to bridge the care gap. Offline‑first. Federated learning. Population health early warning." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://hulme-ai.github.io" />
-  <link rel="icon" href="hulme-logo.png">
+  <!-- Use your PNG exactly as named in the repo (case‑sensitive) -->
+  <link rel="icon" href="hulme-logo.PNG">
 
   <!-- Tailwind CSS (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,9 +19,9 @@
       theme: {
         extend: {
           colors: {
-            hulmeBlue: '#0d4f7c',
-            hulmeCream: '#f4efe4',
-            hulmeGreen: '#1fb874',
+            hulmeBlue: '#0d4f7c', // deep brand blue
+            hulmeCream: '#f4efe4', // light cream
+            hulmeGreen: '#1fb874', // accent green
             hulmeInk: '#0b2a3a',
           },
           fontFamily: {
@@ -43,7 +44,7 @@
   <header class="bg-hulmeBlue text-white">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4">
       <a href="#top" class="flex items-center gap-3">
-        <img src="hulme-logo.png" alt="HULME Logo" class="w-10 h-10 rounded-lg ring-1 ring-white/20" />
+        <img src="hulme-logo.PNG" alt="HULME Logo" class="w-9 h-9 object-contain rounded-lg ring-1 ring-white/20 bg-white/10" />
         <span class="text-xl sm:text-2xl font-extrabold tracking-wide">HULME</span>
       </a>
       <nav class="hidden md:flex items-center gap-6 text-white/90">
@@ -63,18 +64,19 @@
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-20">
       <div class="grid md:grid-cols-2 gap-10 items-center">
         <div>
-          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">AI-Empowered Community Health Guides</h1>
+          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">AI‑Empowered Community Health Guides</h1>
           <p class="mt-5 text-white/90 text-lg max-w-prose">Frontline triage to bridge the care gap. HULME accelerates health at the first mile by putting safe, intelligent triage support into the hands of certified health guides — even when fully offline.</p>
           <div class="mt-8 flex gap-4">
             <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-hulmeGreen font-semibold shadow-soft hover:brightness-105">Request a pilot</a>
             <a href="#tech" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl ring-1 ring-white/40 text-white/90 hover:text-white">See how it works</a>
           </div>
-          <p class="mt-6 text-white/70 text-sm">Offline-first • Federated learning • MHRA Class I triage tool • Privacy-preserving</p>
+          <p class="mt-6 text-white/70 text-sm">Offline‑first • Federated learning • MHRA Class I triage tool • Privacy‑preserving</p>
         </div>
         <div class="md:justify-self-end">
-          <div class="relative w-full max-w-md mx-auto">
-            <div class="aspect-[1/1] rounded-3xl bg-white grid place-items-center shadow-soft">
-              <img src="hulme-logo.png" alt="HULME Logo" class="max-h-48 object-contain" />
+          <div class="relative w-full max-w-md ml-auto">
+            <!-- Center your PNG nicely in a rounded card -->
+            <div class="aspect-[1/1] rounded-3xl bg-white/10 ring-1 ring-white/20 shadow-soft grid place-items-center">
+              <img src="hulme-logo.PNG" alt="HULME Logo" class="object-contain max-w-[70%] max-h-[70%]" />
             </div>
           </div>
         </div>
@@ -82,12 +84,174 @@
     </div>
   </section>
 
-  <!-- (the rest of the page stays the same) -->
+  <!-- Problem Stats -->
+  <section id="problem" class="bg-hulmeCream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-extrabold text-hulmeInk">The problem</h2>
+        <p class="mt-3 text-slate-700">An overburdened NHS, where inaccessible primary care and rushed appointments prevent timely help — leading to costly diagnostic delays.</p>
+      </div>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 rounded-2xl bg-white shadow-soft">
+          <p class="text-5xl font-extrabold text-hulmeBlue">40%</p>
+          <p class="mt-2 text-slate-700">of A&E visits are potentially avoidable due to lack of accessible primary/community care options.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white shadow-soft">
+          <p class="text-5xl font-extrabold text-hulmeBlue">~55</p>
+          <p class="mt-2 text-slate-700">appointments per GP per day — an unsustainable workload that limits consultation time.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white shadow-soft">
+          <p class="text-5xl font-extrabold text-hulmeBlue">47%</p>
+          <p class="mt-2 text-slate-700">of patients leave GP appointments with unaddressed worries due to time constraints.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white shadow-soft">
+          <p class="text-5xl font-extrabold text-hulmeBlue">45%</p>
+          <p class="mt-2 text-slate-700">longer diagnostic delays for rural patients due to access barriers and shortages.</p>
+        </div>
+      </div>
+      <p class="mt-6 text-sm text-slate-500">Sources: NHS England, BMA/NHS Digital, The Health Foundation (Univ. of Cambridge), Univ. of Exeter.</p>
+    </div>
+  </section>
+
+  <!-- Solution Pillars -->
+  <section id="solution" class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-extrabold text-hulmeInk">AI Triage Assistant for Certified Health Guides</h2>
+        <p class="mt-3 text-slate-700">Human‑led protocols, privacy‑preserving intelligence, and population‑level early warning — designed for clinics and workplaces.</p>
+      </div>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-hulmeCream">
+          <h3 class="text-xl font-bold text-hulmeInk">1) Human‑Led Triage</h3>
+          <p class="mt-2 text-slate-700">&lt;90‑second AI‑assisted preliminary risk assessments by certified health guides reduce missed concerns.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-hulmeCream">
+          <h3 class="text-xl font-bold text-hulmeInk">2) Privacy‑Preserving</h3>
+          <p class="mt-2 text-slate-700">Federated learning keeps patient data local while improving models — fully offline and MHRA‑compliant.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-hulmeCream">
+          <h3 class="text-xl font-bold text-hulmeInk">3) Population Early Warning</h3>
+          <p class="mt-2 text-slate-700">Real‑time analytics detect local spikes and trigger proactive targeted interventions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works / Journey -->
+  <section id="journey" class="bg-hulmeBlue/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-extrabold text-hulmeInk">How it works</h2>
+        <p class="mt-3 text-slate-700">A faster, human‑in‑the‑loop journey that accelerates access and resolution.</p>
+      </div>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white shadow-soft">
+          <h3 class="font-bold text-hulmeInk">Walk‑in or on‑site</h3>
+          <p class="mt-2 text-slate-700">Citizens visit a community hub or workplace station and check in with a certified guide.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white shadow-soft">
+          <h3 class="font-bold text-hulmeInk">AI‑assisted triage (&lt;90s)</h3>
+          <p class="mt-2 text-slate-700">Structured questions generate an urgency rating and a safe plan of action.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white shadow-soft">
+          <h3 class="font-bold text-hulmeInk">Right next step</h3>
+          <p class="mt-2 text-slate-700">Self‑care guidance, structured GP/telehealth referral, or direct emergency pathway.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology -->
+  <section id="tech" class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-extrabold text-hulmeInk">Technology</h2>
+        <p class="mt-3 text-slate-700">Built for reliability, privacy, and low‑resource environments.</p>
+      </div>
+      <div class="mt-10 grid lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-hulmeCream">
+          <h3 class="text-xl font-bold text-hulmeInk">Offline‑First</h3>
+          <p class="mt-2 text-slate-700">Runs on affordable clinic laptops with local inference; gracefully syncs when online.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-hulmeCream">
+          <h3 class="text-xl font-bold text-hulmeInk">Federated Learning</h3>
+          <p class="mt-2 text-slate-700">Models train at community nodes; only model updates leave the site — no central data pooling.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-hulmeCream">
+          <h3 class="text-xl font-bold text-hulmeInk">Population Intelligence</h3>
+          <p class="mt-2 text-slate-700">Anonymized signals power early outbreak detection and precision resource deployment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team" class="bg-hulmeBlue text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-extrabold">Team</h2>
+        <p class="mt-3 text-white/85">Cross‑functional founders and operators across clinical, AI, cloud, and public health.</p>
+      </div>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white/5 ring-1 ring-white/10">
+          <h3 class="font-bold">Aston Tan — Co‑Founder (CEO)</h3>
+          <p class="text-white/80 mt-1">Oxford MBA; ex‑healthcare consultant & data scientist</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white/5 ring-1 ring-white/10">
+          <h3 class="font-bold">Basil Ng — Co‑Founder (CTO)</h3>
+          <p class="text-white/80 mt-1">Cloud engineer; ex‑CERN AI researcher</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white/5 ring-1 ring-white/10">
+          <h3 class="font-bold">+ Advisors & Specialists</h3>
+          <p class="text-white/80 mt-1">Regulatory, medical content, strategy, and market development</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Contact -->
+  <section id="contact" class="bg-hulmeCream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <h2 class="text-3xl font-extrabold text-hulmeInk">Partner with us</h2>
+          <p class="mt-3 text-slate-700 max-w-prose">We’re piloting with rural clinics, public health teams, and employers. Tell us about your community or workforce and we’ll follow up with next steps.</p>
+          <ul class="mt-6 space-y-2 text-slate-700">
+            <li>• MHRA Class I self‑certified triage tool</li>
+            <li>• HL7/FHIR integration options</li>
+            <li>• Tiered licensing for B2G & B2B</li>
+          </ul>
+        </div>
+        <form action="https://formspree.io/f/your-form-id" method="POST" class="bg-white p-6 rounded-2xl shadow-soft">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-slate-700">Name</label>
+              <input required name="name" type="text" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-hulmeGreen focus:border-hulmeGreen" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-700">Email</label>
+              <input required name="email" type="email" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-hulmeGreen focus:border-hulmeGreen" />
+            </div>
+          </div>
+          <div class="mt-4">
+            <label class="block text-sm font-medium text-slate-700">Organization</label>
+            <input name="org" type="text" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-hulmeGreen focus:border-hulmeGreen" />
+          </div>
+          <div class="mt-4">
+            <label class="block text-sm font-medium text-slate-700">How can we help?</label>
+            <textarea name="message" rows="4" class="mt-1 w-full rounded-lg border-slate-300 focus:ring-hulmeGreen focus:border-hulmeGreen" placeholder="Pilot interest, community size, timelines..."></textarea>
+          </div>
+          <button type="submit" class="mt-6 w-full py-3 rounded-xl bg-hulmeGreen text-white font-semibold shadow-soft hover:brightness-105">Request a pilot</button>
+          <p class="mt-2 text-xs text-slate-500">By submitting, you agree we may contact you about HULME. We won’t share your information.</p>
+        </form>
+      </div>
+    </div>
+  </section>
 
   <footer class="bg-white border-t">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
       <p class="text-sm text-slate-600">© <span id="y"></span> HULME. All rights reserved.</p>
-      <div class="text-sm text-slate-600">Built offline-first • Privacy-preserving • Community-driven</div>
+      <div class="text-sm text-slate-600">Built offline‑first • Privacy‑preserving • Community‑driven</div>
     </div>
   </footer>
 
